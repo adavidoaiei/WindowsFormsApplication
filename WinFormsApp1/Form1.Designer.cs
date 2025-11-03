@@ -37,6 +37,10 @@
             lblEmail = new Label();
             tbEmail = new TextBox();
             btnAdd = new Button();
+            btnEdit = new Button();
+            btnSave = new Button();
+            btnCancel = new Button();
+            btnDelete = new Button();
             dgvPersons = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvPersons).BeginInit();
             SuspendLayout();
@@ -107,13 +111,53 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(350, 52);
+            btnAdd.Location = new Point(350, 17);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
+            // 
+            // btnEdit
+            // 
+            btnEdit.Location = new Point(350, 52);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(94, 29);
+            btnEdit.TabIndex = 10;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(460, 17);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 29);
+            btnSave.TabIndex = 11;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(460, 52);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(94, 29);
+            btnCancel.TabIndex = 12;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(570, 35);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 29);
+            btnDelete.TabIndex = 13;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // dgvPersons
             // 
@@ -125,6 +169,9 @@
             dgvPersons.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPersons.AllowUserToAddRows = false;
             dgvPersons.ReadOnly = true;
+            dgvPersons.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPersons.MultiSelect = false;
+            dgvPersons.SelectionChanged += dgvPersons_SelectionChanged;
             // 
             // Form1
             // 
@@ -132,6 +179,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(dgvPersons);
+            Controls.Add(btnDelete);
+            Controls.Add(btnCancel);
+            Controls.Add(btnSave);
+            Controls.Add(btnEdit);
             Controls.Add(btnAdd);
             Controls.Add(tbEmail);
             Controls.Add(lblEmail);
@@ -159,6 +210,10 @@
         private Label lblEmail;
         private TextBox tbEmail;
         private Button btnAdd;
+        private Button btnEdit;
+        private Button btnSave;
+        private Button btnCancel;
+        private Button btnDelete;
         private DataGridView dgvPersons;
     }
 }
